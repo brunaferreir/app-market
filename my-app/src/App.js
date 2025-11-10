@@ -1,49 +1,55 @@
-// import logo from './logo.svg';
-// import './App.css';
-// //import FormSeller from './componentes/Seller/FormSeller';
-// import FormLogin from './componentes/Seller/FormLogin';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header"> 
-//        {/* <FormSeller/> <br/> */}
-//        <FormLogin nome ="Carlos" />
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
+import SellerRegister from "./pages/SellerRegister";
+import ActivateSeller from "./pages/ActivateSeller";
+import LoginPage from "./pages/LoginPage";
+import Dashboard from "./pages/Dashboard";
+import ProductList from "./pages/ProductList";
+import ProductForm from "./pages/ProductForm";
+import ProductDetails from "./pages/ProductDetails";
+import CreateSale from "./pages/CreateSale";
 
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import FormLogin from "./components/Seller/FormLogin";
-import Dashboard from "./components/Seller/Dashboard";
-import NotFound from "./pages/NotFound";
+import "./App.css";
+import "./pages/Form.css";
+import "./pages/Table.css";
 
-const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/auth" element={<FormLogin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <AuthProvider>
+      <Router>
+        <header>
+          <h1>App Market</h1>
+          <nav>
+            <Link to="/">Home</Link>{" | "}
+            <Link to="/login">Login</Link>{" | "}
+            <Link to="/register">Cadastrar</Link>
+          </nav>
+        </header>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<div>Bem-vindo ao App Market</div>} />
+            <Route path="/register" element={<SellerRegister />} />
+            <Route path="/activate" element={<ActivateSeller />} />
+            <Route path="/login" element={<LoginPage />} />
+
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+            <Route path="/products" element={<ProtectedRoute><ProductList /></ProtectedRoute>} />
+            <Route path="/products/new" element={<ProtectedRoute><ProductForm /></ProtectedRoute>} />
+            <Route path="/products/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
+            <Route path="/products/:id/edit" element={<ProtectedRoute><ProductForm /></ProtectedRoute>} />
+
+            <Route path="/sales/new" element={<ProtectedRoute><CreateSale /></ProtectedRoute>} />
+          </Routes>
+        </main>
+      </Router>
+    </AuthProvider>
+  );
+}
 
 export default App;

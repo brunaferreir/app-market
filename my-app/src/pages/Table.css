@@ -1,0 +1,51 @@
+/* ========= TABLES ========= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+thead {
+  background: var(--blue-dark);
+  color: white;
+}
+
+thead th {
+  padding: 14px;
+  font-size: 15px;
+}
+
+tbody tr {
+  transition: 0.2s;
+}
+
+tbody tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+tbody tr:hover {
+  background: #dceaff;
+}
+
+tbody td {
+  padding: 14px;
+  font-size: 15px;
+  border-bottom: 1px solid #e3e9f1;
+}
+
+/* links dentro da tabela */
+table a {
+  color: var(--blue-dark);
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+table a:hover {
+  color: var(--blue);
+}
