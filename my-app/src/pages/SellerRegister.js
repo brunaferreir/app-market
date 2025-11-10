@@ -3,7 +3,8 @@ import api from "../api";
 import '../App.css'
 
 export default function SellerRegister() {
-  const [form, setForm] = useState({ nome: "", cnpj: "", email: "", celular: "", senha: "" });
+
+  const [form, setForm] = useState({ name: "", cnpj: "", email: "", celular: "", password: "" });
   const [message, setMessage] = useState(null);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,7 +15,8 @@ export default function SellerRegister() {
       await api.createSeller(form);
       setMessage("Cadastro realizado! Você receberá um código via WhatsApp para ativação.");
     } catch (err) {
-      setMessage(err.body?.message || "Erro ao cadastrar");
+      // Mensagem de erro mais detalhada do Flask (400)
+      setMessage(err.body?.error || err.body?.message || "Erro ao cadastrar");
     }
   };
 
@@ -23,11 +25,15 @@ export default function SellerRegister() {
       <h2>Cadastro Mini Mercado</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>
-        <input name="nome" placeholder="Nome" value={form.nome} onChange={handleChange} required />
+
+        <input name="name" placeholder="Nome" value={form.name} onChange={handleChange} required />
+        
         <input name="cnpj" placeholder="CNPJ" value={form.cnpj} onChange={handleChange} required />
         <input name="email" placeholder="E-mail" value={form.email} onChange={handleChange} type="email" required />
         <input name="celular" placeholder="Celular (+55...)" value={form.celular} onChange={handleChange} required />
-        <input name="senha" placeholder="Senha" value={form.senha} onChange={handleChange} type="password" required />
+        
+        <input name="password" placeholder="Senha" value={form.password} onChange={handleChange} type="password" required />
+        
         <button type="submit">Cadastrar</button>
       </form>
     </div>

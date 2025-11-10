@@ -22,19 +22,30 @@ export default function ProductForm() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
     try {
-      if (id) {
-        await api.updateProduct(id, { nome: form.nome, preco: Number(form.preco), quantidade: Number(form.quantidade), status: form.status, img: form.img });
-      } else {
-        await api.createProduct({ nome: form.nome, preco: Number(form.preco), quantidade: Number(form.quantidade), status: form.status, img: form.img });
+     
+        const productData = {
+            name: form.nome, // Mapeado
+            price: Number(form.preco), // Mapeado
+            quantity: Number(form.quantidade), // Mapeado
+            status: form.status,
+            image: form.img // Mapeado para 'image' (que o Controller espera)
+        };
+        
+    if (id) {
+      await api.updateProduct(id, productData);
+    } else {
+      await api.createProduct(productData); 
       }
-      navigate("/products");
+    navigate("/products");
     } catch (err) {
       setError(err.body?.message || "Erro ao salvar produto");
     }
   };
+  
+
 
   return (
     <div className="container">

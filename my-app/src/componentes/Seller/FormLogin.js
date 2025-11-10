@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 // FormLogin pode receber onSubmit(email, senha)
 export default function FormLogin({ onSubmit }) {
   const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [password, setSenha] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSubmit) {
-      onSubmit(email, senha);
+      onSubmit(email, password);
     }
   };
 
@@ -20,7 +20,7 @@ export default function FormLogin({ onSubmit }) {
       </div>
       <div>
         <label>Senha</label>
-        <input type="password" value={senha} onChange={e => setSenha(e.target.value)} required />
+        <input type="password" value={password} onChange={e => setSenha(e.target.value)} required />
       </div>
       <button type="submit">Entrar</button>
     </form>

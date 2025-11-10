@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 import '../App.css'
 
-// Se você já tem FormLogin.js com layout, importe e utilize-o aqui.
+
 import FormLogin from "../componentes/Seller/FormLogin"; // ajuste o path se necessário
 
 export default function LoginPage() {
@@ -11,10 +11,10 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
-  // Se FormLogin não enviar os dados, você pode replicar um pequeno form aqui.
-  const handleLogin = async (email, senha) => {
+ 
+  const handleLogin = async (email, password) => {
     try {
-      await login({ email, senha });
+      await login({ email, password});
       navigate("/dashboard");
     } catch (err) {
       setError(err.body?.message || "Erro ao entrar");
