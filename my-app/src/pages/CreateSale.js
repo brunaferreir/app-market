@@ -22,7 +22,7 @@ export default function CreateSale() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.createSale({ produtoId: Number(produtoId), quantidade: Number(quantidade) });
+      await api.createSale({ product_id: Number(produtoId), quantity: Number(quantidade) });
       setMessage("Venda registrada com sucesso!");
     } catch (err) {
       setMessage(err.body?.message || "Erro ao registrar venda");
@@ -37,7 +37,7 @@ export default function CreateSale() {
         <select value={produtoId} onChange={(e) => setProdutoId(e.target.value)} required>
           <option value="">Selecione um produto</option>
           {products.map(p => (
-            <option key={p.id} value={p.id}>{p.nome} - estoque: {p.quantidade}</option>
+            <option key={p.id} value={p.id}>{p.name} - estoque: {p.quantidade}</option>
           ))}
         </select>
         <input type="number" min="1" value={quantidade} onChange={(e) => setQuantidade(e.target.value)} />
