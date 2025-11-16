@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000"  // ⬅ trocado do Render para o backend local
+    baseURL: "https://marketsystem.onrender.com"  
 });
 
 api.interceptors.request.use((config) => {
