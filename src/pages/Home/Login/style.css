@@ -1,0 +1,135 @@
+/* ---------------------------------------------------------------- */
+/* RESET E FONTES */
+/* ---------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Mantenho a fonte, mas se for diferente no Cadastro, ajuste aqui */
+  font-family: "Gilroy", "Gil Sans", sans-serif; 
+}
+
+/* ---------------------------------------------------------------- */
+/* ESTILO GLOBAL DA PÁGINA (CADASTRO-CONTAINER) */
+/* ---------------------------------------------------------------- */
+body {
+    /* Define o fundo da página inteira com a cor do Cadastro */
+    background-color: #D9D9D9; 
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.cadastro-container {
+    /* Centraliza o card verticalmente e horizontalmente */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------- */
+/* ESTILO DO CARD PRINCIPAL (CADASTRO-CARD) */
+/* ---------------------------------------------------------------- */
+.cadastro-card {
+    background-color: white; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    padding: 30px;
+    width: 100%;
+    max-width: 450px; /* Largura que definimos no Cadastro */
+    text-align: center;
+    /* Remove o 'gap' e flex-direction para controle manual de espaçamento */
+    display: block; 
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #4B69A6; /* Usa a cor azul do botão para o título */
+    font-weight: 700;
+}
+
+.cadastro-card form {
+    /* Garante que o fundo do formulário seja transparente/branco */
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* ESTILO DOS INPUTS (Input-Group) */
+/* ---------------------------------------------------------------- */
+.input-group {
+    margin-bottom: 20px; /* Mais espaçamento entre inputs no login, se necessário */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px; 
+    background-color: #f8f8f8; 
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333; 
+    transition: border-color 0.3s, background-color 0.3s; 
+}
+
+.input-group input::placeholder {
+    color: #999; 
+}
+
+.input-group input:focus {
+    border-color: #4B69A6; 
+    background-color: white; 
+    outline: none;
+}
+
+/* ---------------------------------------------------------------- */
+/* ESTILO DO BOTÃO (CADASTRO-BTN) */
+/* ---------------------------------------------------------------- */
+.cadastro-btn {
+    background-color: #4B69A6;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.cadastro-btn:hover {
+    background-color: #3a5385; 
+}
+
+/* ---------------------------------------------------------------- */
+/* ESTILO DO LINK E ERRO */
+/* ---------------------------------------------------------------- */
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link a {
+    color: #4B69A6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.erro {
+  color: #d11a2a;
+  font-weight: bold;
+  margin-top: 8px;
+}

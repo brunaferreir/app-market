@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+.lista-vendas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 550px;
+  width: 100%;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 12px;
+  padding: 35px 25px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.lista-vendas h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.venda-item {
+  width: 100%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-bottom: 12px;
+  border: 1px solid #2c2c2c;
+  transition: 0.3s ease;
+}
+
+.venda-item:hover {
+  background-color: #272727;
+}
+
+.venda-item p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+.botao-voltar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00bfff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+.botao-voltar:hover {
+  background-color: #0099cc;
+}
+
+.erro {
+  color: #ff4c4c;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}

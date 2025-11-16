@@ -1,0 +1,127 @@
+/* ===========================
+   FORÇAR INPUTS CLAROS NO CARD
+   =========================== */
+
+/* Escopo: só dentro do container do formulário */
+.container form input,
+.container form select,
+.container form textarea {
+  background-color: #f8f8f8 !important; /* fundo claro */
+  color: #222 !important;               /* texto escuro */
+  border: 1px solid #e6e6e6 !important;
+  box-shadow: none !important;
+}
+
+/* Placeholder */
+.container form input::placeholder,
+.container form textarea::placeholder {
+  color: #8b8b8b !important;
+}
+
+/* Foco */
+.container form input:focus,
+.container form select:focus,
+.container form textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #4B69A6 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(75,105,166,0.08) !important;
+}
+
+
+
+/* ===========================
+   STYLE PARA input[type="file"]
+   =========================== */
+
+/* Remove aparência nativa feia e deixa box escuro por trás neutro */
+.container form input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #ffffff !important;
+  color: #333 !important;
+  cursor: pointer;
+}
+
+/* Estiliza o botão interno (Chrome, Edge, Firefox novo) */
+.container form input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hover do botão de escolher arquivo */
+.container form input[type="file"]::file-selector-button:hover {
+  background-color: #e6e6e6;
+}
+
+/* Em navegadores que usam ::-webkit-file-upload-button */
+.container form input[type="file"]::-webkit-file-upload-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ======= CARD CLARO DO FORMULÁRIO ======= */
+.container .form-card {
+  background: #ffffff !important;          /* card branco */
+  border-radius: 12px;
+  padding: 35px 25px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 0 18px rgba(0,0,0,0.08);
+}
+
+/* CARD PRINCIPAL */
+.form-card {
+  background: #ffffff !important;
+  border-radius: 12px;
+  padding: 35px 25px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 0 18px rgba(0,0,0,0.1);
+}
+
+
+
+/* ===========================
+   CASO ALGUMA REGRA EXTERNA USE "input { background: #000 }"
+   =========================== */
+/* Aplicando alta especificidade apenas para dentro do card */
+form,
+form * {
+  background-repeat: no-repeat;
+}
+
+/* Garantia final: força inputs dentro do form para claro (último recurso) */
+form input,
+form select,
+form textarea {
+  background-color: #f8f8f8 !important;
+  color: #222 !important;
+}
+
+/* ===========================
+   BOTÃO CONFIRMAR E VOLTAR (consistência)
+   =========================== */
+form button[type="submit"],
+.botao-voltar,
+.container form .botao-voltar {
+  background-color: #4B69A6 !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+

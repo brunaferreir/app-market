@@ -1,0 +1,157 @@
+/* ===========================
+   LAYOUT GERAL
+=========================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4B69A6, #6C82B5);
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   CARD
+=========================== */
+.lista-produtos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 35px 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+
+/* ===========================
+   TÍTULO
+=========================== */
+.lista-produtos h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #2e3a59;
+}
+
+/* ===========================
+   ITEM DO PRODUTO
+=========================== */
+.produto-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f5fa;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+  border: 1px solid #dce3f1;
+}
+
+.produto-item:hover {
+  background-color: #e9edf7;
+}
+
+.produto-item span {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2e3a59;
+}
+
+.produto-item span.inativo {
+  color: #888;
+  text-decoration: line-through;
+}
+
+/* ===========================
+   IMAGEM
+=========================== */
+.produto-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.produto-imagem,
+.imagem-placeholder {
+  width: 55px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+  background-color: #d8ddee;
+}
+
+.imagem-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c6c6c;
+  font-size: 22px;
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+.botoes {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4B69A6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 14px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #38548a;
+}
+
+button.inativar {
+  background-color: #d9534f;
+}
+
+button.inativar:hover {
+  background-color: #b84441;
+}
+
+button:disabled {
+  background-color: #a8a8a8;
+  cursor: not-allowed;
+}
+
+/* Voltar */
+.botao-voltar {
+  margin-top: 25px;
+  background-color: #4B69A6 !important;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.botao-voltar:hover {
+  background-color: #38548a !important;
+}
+
+/* ===========================
+   ERRO
+=========================== */
+.erro {
+  color: #b30000;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 15px;
+}

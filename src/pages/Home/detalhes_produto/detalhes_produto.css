@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+.detalhes-produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  width: 100%;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 12px;
+  padding: 35px 25px;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+.detalhes-produto h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.info {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  background-color: #1e1e1e;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #2c2c2c;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #00bfff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #0099cc;
+}
+
+.erro {
+  color: red;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
