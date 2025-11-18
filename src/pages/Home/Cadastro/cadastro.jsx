@@ -19,24 +19,27 @@ function Cadastro() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      // Nota: Seu backend espera 'phone', mas seu estado usa 'number'. 
-      // É recomendado mudar 'number' para 'phone' no estado e no input 'name'.
-      const dataToSend = { ...formData, phone: formData.number }; 
-      delete dataToSend.number; // Remove 'number' e usa 'phone' que é esperado pelo Flask
+  try {
+    // Envia exatamente o que o backend espera
+    const dataToSend = { ...formData };
 
-      const response = await api.post("/user", dataToSend);
-      alert("Usuário registrado com sucesso!");
-      navigate("/ativar", { state: { number: formData.number } });
+    const response = await api.post("/user", dataToSend);
 
-    } catch (error) {
-      console.error(error);
-      alert("Erro ao registrar usuário!");
-    }
-  };
+    alert("Usuário registrado com sucesso!");
+
+    navigate("/ativar", {
+      state: { number: formData.number }
+    });
+
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao registrar usuário!");
+  }
+};
+
 
   return (
     <div className="cadastro-container">
